@@ -1,23 +1,33 @@
 <template>
   <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">
-        vplace
-      </h1>
-      <h2 class="subtitle">
-        personal site for vanessa place
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
+    <div class="row">
+      <div class="col s12 col m6 col l4">
+        <a 
+          class="sr-link" 
+          href="#"> 
+          <h1 class="sr-link-title"> Vanessa Place - Poet | Academy of American Poets </h1> 
+        </a>
+        <h2 class="sr-url">https://en.wikipedia.org/wiki/Vanessa_Place</h2>
+        <p> May 1, 2018 - “Ergo, echo,” Vanessa Place has said of herself.[4] But if, on the one hand, Echo adds to our artifacts, augmenting our understanding — Echo ... </p>
       </div>
+      <div class="col s12 col m6 col l4">
+        <a 
+          class="sr-link" 
+          href="#"> 
+          <h1 class="sr-link-title"> Vanessa Place - Poet | Academy of American Poets </h1> 
+        </a>
+        <h2 class="sr-url">https://en.wikipedia.org/wiki/Vanessa_Place</h2>
+        <p> May 1, 2018 - “Ergo, echo,” Vanessa Place has said of herself.[4] But if, on the one hand, Echo adds to our artifacts, augmenting our understanding — Echo ... </p>
+      </div>
+      <div class="col s12 col m6 col l4">
+        <a 
+          class="sr-link" 
+          href="#"> 
+          <h1 class="sr-link-title"> Vanessa Place - Poet | Academy of American Poets </h1> 
+        </a>
+        <h2 class="sr-url">https://en.wikipedia.org/wiki/Vanessa_Place</h2>
+        <p> May 1, 2018 - “Ergo, echo,” Vanessa Place has said of herself.[4] But if, on the one hand, Echo adds to our artifacts, augmenting our understanding — Echo ... </p>
+      </div>      
     </div>
   </section>
 </template>
@@ -32,34 +42,31 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+html {
+  line-height: 1.2;
+  font-family: 'arial';
+  h1 {
+    font-size: 18px;
+  }
+  h2 {
+    font-size: 14px;
+  }
+  h3 {
+    font-size: 13px;
+  }
+  a {
+    color: #1a0dab;
+  }
+}
 .container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+  .row {
+    .sr-link-title {
+      margin-bottom: 5px;
+    }
+    .sr-url {
+      color: #006621;
+    }
+  }
 }
 </style>
