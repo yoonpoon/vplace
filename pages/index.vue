@@ -1,70 +1,41 @@
 <template>
   <section class="container">
     <div class="row">
-      <div class="col s12 col m6 col l4 sr-container">
+      <div 
+        v-for="post in posts" 
+        :key="post.id"
+        class="col s12 col m6 col l4 sr-container">
         <a 
-          class="sr-link" 
-          href="#"> 
-          <h1 class="sr-link-title"> Vanessa Place - Poet | Academy of American Poets </h1> 
+          :href="post.fields.link"
+          target="_blank"
+          class="sr-link"> 
+          <h1 class="sr-link-title"> {{ post.fields.title }} </h1> 
         </a>
-        <h2 class="sr-url">https://en.wikipedia.org/wiki/Vanessa_Place</h2>
-        <p> May 1, 2018 - “Ergo, echo,” Vanessa Place has said of herself.[4] But if, on the one hand, Echo adds to our artifacts, augmenting our understanding — Echo ... </p>
+        <h2 class="sr-url">{{ post.fields.link }}</h2>
+        <p> {{ post.fields.intro }} </p>
       </div>
-      <div class="col s12 col m6 col l4 sr-container">
-        <a 
-          class="sr-link" 
-          href="#"> 
-          <h1 class="sr-link-title"> Vanessa Place - Poet | Academy of American Poets </h1> 
-        </a>
-        <h2 class="sr-url">https://en.wikipedia.org/wiki/Vanessa_Place</h2>
-        <p> May 1, 2018 - “Ergo, echo,” Vanessa Place has said of herself.[4] But if, on the one hand, Echo adds to our artifacts, augmenting our understanding — Echo ... </p>
-      </div>
-      <div class="col s12 col m6 col l4 sr-container">
-        <a 
-          class="sr-link" 
-          href="#"> 
-          <h1 class="sr-link-title"> Vanessa Place - Poet | Academy of American Poets </h1> 
-        </a>
-        <h2 class="sr-url">https://en.wikipedia.org/wiki/Vanessa_Place</h2>
-        <p> May 1, 2018 - “Ergo, echo,” Vanessa Place has said of herself.[4] But if, on the one hand, Echo adds to our artifacts, augmenting our understanding — Echo ... </p>
-      </div> 
-      <div class="col s12 col m6 col l4 sr-container">
-        <a 
-          class="sr-link" 
-          href="#"> 
-          <h1 class="sr-link-title"> Vanessa Place - Poet | Academy of American Poets </h1> 
-        </a>
-        <h2 class="sr-url">https://en.wikipedia.org/wiki/Vanessa_Place</h2>
-        <p> May 1, 2018 - “Ergo, echo,” Vanessa Place has said of herself.[4] But if, on the one hand, Echo adds to our artifacts, augmenting our understanding — Echo ... </p>
-      </div>
-      <div class="col s12 col m6 col l4 sr-container">
-        <a 
-          class="sr-link" 
-          href="#"> 
-          <h1 class="sr-link-title"> Vanessa Place - Poet | Academy of American Poets </h1> 
-        </a>
-        <h2 class="sr-url">https://en.wikipedia.org/wiki/Vanessa_Place</h2>
-        <p> May 1, 2018 - “Ergo, echo,” Vanessa Place has said of herself.[4] But if, on the one hand, Echo adds to our artifacts, augmenting our understanding — Echo ... </p>
-      </div>
-      <div class="col s12 col m6 col l4 sr-container">
-        <a 
-          class="sr-link" 
-          href="#"> 
-          <h1 class="sr-link-title"> Vanessa Place - Poet | Academy of American Poets </h1> 
-        </a>
-        <h2 class="sr-url">https://en.wikipedia.org/wiki/Vanessa_Place</h2>
-        <p> May 1, 2018 - “Ergo, echo,” Vanessa Place has said of herself.[4] But if, on the one hand, Echo adds to our artifacts, augmenting our understanding — Echo ... </p>
-      </div>                       
     </div>
   </section>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import client from '~/plugins/contentful'
 
 export default {
-  components: {
-    Logo
+  data() {
+    return {
+      posts: []
+    }
+  },
+  asyncData() {
+    return client
+      .getEntries({
+        content_type: 'index',
+        order: '-sys.createdAt',
+        include: 4
+      })
+      .then(({ items: [{ fields }] }) => fields)
+      .catch(console.error)
   }
 }
 </script>

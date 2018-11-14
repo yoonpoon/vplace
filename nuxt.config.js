@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const pkg = require('./package')
 
 module.exports = {
@@ -28,14 +30,15 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [],
+  plugins: [{ src: '~/plugins/contentful' }],
 
   /*
   ** Nuxt.js modules
   */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/dotenv'
   ],
   /*
   ** Axios module configuration
