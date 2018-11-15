@@ -48,7 +48,7 @@ export default {
 html {
   h1 {
     font-size: 18px;
-    margin-bottom: 2.5px;
+    margin-bottom: 5px;
     margin-top: 20px;
     font-weight: lighter;
   }
@@ -65,9 +65,6 @@ html {
     margin: 0 auto;
     .sr-container {
       margin-bottom: 20px;
-      p {
-        line-height: 1.4;
-      }
     }
     .sr-url {
       color: #006621;

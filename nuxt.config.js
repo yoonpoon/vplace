@@ -30,7 +30,7 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [{ src: '~/plugins/contentful', src: '~/plugins/VueMasonry.vue' }],
+  plugins: [{ src: '~/plugins/contentful' }, { src: '~/plugins/VueMasonry' }],
 
   /*
   ** Nuxt.js modules
