@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section class="wrap">
     <masonry
       :cols="{default: 3, 1000: 2, 800: 1}"
       :gutter="{default: '30px', 700: '15px'}"
@@ -61,17 +61,17 @@ html {
     color: #1a0dab;
   }
 }
-.container {
-  .row {
-    .sr-container {
-      margin-bottom: 20px;
-      p {
-        line-height: 1.4;
-      }
+.wrap {
+  width: 95%;
+  margin: 0 auto;
+  .sr-container {
+    margin-bottom: 20px;
+    p {
+      line-height: 1.4;
     }
-    .sr-url {
-      color: #006621;
-    }
+  }
+  .sr-url {
+    color: #006621;
   }
 }
 </style>
