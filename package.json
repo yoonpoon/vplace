@@ -19,7 +19,8 @@
     "cross-env": "^5.2.0",
     "node-sass": "^4.10.0",
     "nuxt": "^2.0.0",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "vue-slideout": "^1.7.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

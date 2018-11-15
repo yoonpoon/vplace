@@ -60,18 +60,18 @@ html {
   a {
     color: #1a0dab;
   }
-}
-.wrap {
-  width: 95%;
-  margin: 0 auto;
-  .sr-container {
-    margin-bottom: 20px;
-    p {
-      line-height: 1.4;
+  .wrap {
+    width: 95%;
+    margin: 0 auto;
+    .sr-container {
+      margin-bottom: 20px;
+      p {
+        line-height: 1.4;
+      }
     }
-  }
-  .sr-url {
-    color: #006621;
+    .sr-url {
+      color: #006621;
+    }
   }
 }
 </style>
