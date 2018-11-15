@@ -1,6 +1,9 @@
 <template>
   <section class="container">
-    <div class="row">
+    <masonry
+      :cols="{default: 3, 1000: 2, 800: 1}"
+      :gutter="{default: '30px', 700: '15px'}"
+    >
       <div 
         v-for="post in posts" 
         :key="post.id"
@@ -14,12 +17,13 @@
         <h2 class="sr-url">{{ post.fields.link }}</h2>
         <p> {{ post.fields.intro }} </p>
       </div>
-    </div>
+    </masonry>
   </section>
 </template>
 
 <script>
 import client from '~/plugins/contentful'
+import VueMasonry from '~/plugins/VueMasonry'
 
 export default {
   data() {
@@ -44,7 +48,8 @@ export default {
 html {
   h1 {
     font-size: 18px;
-    margin-bottom: 5px;
+    margin-bottom: 2.5px;
+    margin-top: 20px;
     font-weight: lighter;
   }
   h2 {
@@ -60,6 +65,9 @@ html {
   .row {
     .sr-container {
       margin-bottom: 20px;
+      p {
+        line-height: 1.4;
+      }
     }
     .sr-url {
       color: #006621;
