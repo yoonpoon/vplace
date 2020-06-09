@@ -1,37 +1,18 @@
 <template>
   <section class="wrap">
-    <!-- <no-ssr>
-      <Slideout 
-        :toggle-selectors="['.toggle-button']" 
-        menu="#menu" 
-        panel="#panel" 
-        @on-open="open">
-        <nav id="menu">
-          <div>Menu</div>
-        </nav>
-        <main id="panel">
-          <header>
-            <div>
-              <button class="toggle-button">☰</button>
-              Panel
-            </div>
-          </header>
-        </main>
-      </Slideout>
-    </no-ssr> -->
     <masonry
       :cols="{default: 3, 1000: 2, 800: 1}"
       :gutter="{default: '30px', 700: '15px'}"
     >
-      <div 
-        v-for="post in posts" 
+      <div
+        v-for="post in posts"
         :key="post.id"
         class="col s12 col m6 col l4 sr-container">
-        <a 
+        <a
           :href="post.fields.link"
           target="_blank"
-          class="sr-link"> 
-          <h1 class="sr-link-title"> {{ post.fields.title }} </h1> 
+          class="sr-link">
+          <h1 class="sr-link-title"> {{ post.fields.title }} </h1>
         </a>
         <h2 class="sr-url">{{ post.fields.link }}</h2>
         <p> {{ post.fields.intro }} </p>
